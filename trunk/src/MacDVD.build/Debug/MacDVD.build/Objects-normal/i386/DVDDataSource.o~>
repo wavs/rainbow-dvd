@@ -1,0 +1,3 @@
+/Users/alexandretestu/Documents/Code/cocoa/Mac/MacDVD/DVDDataSource.m: In function '-[DVDDataSource addNewDVD:]':
+/Users/alexandretestu/Documents/Code/cocoa/Mac/MacDVD/DVDDataSource.m:69: warning: conflicting types for '-(NSMutableDictionary *)addNewDVD:(NSMutableDictionary *)dvd'
+/Users/alexandretestu/Documents/Code/cocoa/Mac/MacDVD/DVDDataSource.h:21: warning: previous declaration of '-(NSDictionary *)addNewDVD:(NSDictionary *)dvd'
