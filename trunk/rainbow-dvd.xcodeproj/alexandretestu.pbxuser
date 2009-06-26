@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = CE787F550FF4ED76001EB716 /* rainbow-dvd */;
+		activeTarget = 8D1107260486CEB800E47090 /* rainbow-dvd */;
+		addToTargets = (
+			8D1107260486CEB800E47090 /* rainbow-dvd */,
+		);
+		codeSenseManager = CE787F620FF4ED95001EB716 /* Code sense */;
+		executables = (
+			CE787F550FF4ED76001EB716 /* rainbow-dvd */,
+		);
+		perUserDictionary = {
+			"PBXConfiguration.PBXBreakpointsDataSource.v1:1CA23EDF0692099D00951B8B" = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXBreakpointsDataSource_BreakpointID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					329,
+					20,
+					229,
+					229,
+					157,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXBreakpointsDataSource_ActionID,
+					PBXBreakpointsDataSource_TypeID,
+					PBXBreakpointsDataSource_BreakpointID,
+					PBXBreakpointsDataSource_UseID,
+					PBXBreakpointsDataSource_LocationID,
+					PBXBreakpointsDataSource_ConditionID,
+					PBXBreakpointsDataSource_IgnoreCountID,
+					PBXBreakpointsDataSource_ContinueID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					834,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXConfiguration.PBXFileTableDataSource3.XCSCMDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					20,
+					810,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_SCM_ColumnID,
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 267748328;
+			PBXWorkspaceStateSaveDate = 267748328;
+		};
+		perUserProjectItems = {
+			CE01323C0FF583F7004F2A17 /* PBXTextBookmark */ = CE01323C0FF583F7004F2A17 /* PBXTextBookmark */;
+			CE01323D0FF583F7004F2A17 /* PBXTextBookmark */ = CE01323D0FF583F7004F2A17 /* PBXTextBookmark */;
+			CE01325A0FF58410004F2A17 /* PBXTextBookmark */ = CE01325A0FF58410004F2A17 /* PBXTextBookmark */;
+			CE01325B0FF58410004F2A17 /* PBXTextBookmark */ = CE01325B0FF58410004F2A17 /* PBXTextBookmark */;
+			CE01325C0FF58410004F2A17 /* PBXTextBookmark */ = CE01325C0FF58410004F2A17 /* PBXTextBookmark */;
+			CE29E7150FF572DF00762235 = CE29E7150FF572DF00762235 /* PBXTextBookmark */;
+			CE29E7160FF572DF00762235 = CE29E7160FF572DF00762235 /* PBXTextBookmark */;
+			CE29E7460FF57D9300762235 = CE29E7460FF57D9300762235 /* PBXTextBookmark */;
+			CE29E7780FF5800900762235 = CE29E7780FF5800900762235 /* PBXTextBookmark */;
+			CE29E77D0FF580C200762235 = CE29E77D0FF580C200762235 /* PBXTextBookmark */;
+			CE29E77E0FF580C200762235 = CE29E77E0FF580C200762235 /* PBXTextBookmark */;
+			CE29E77F0FF580C200762235 = CE29E77F0FF580C200762235 /* PBXTextBookmark */;
+			CE29E7800FF580C200762235 = CE29E7800FF580C200762235 /* PBXTextBookmark */;
+			CE59B3240FF58188006C3018 = CE59B3240FF58188006C3018 /* PBXTextBookmark */;
+			CE59B32E0FF583D8006C3018 = CE59B32E0FF583D8006C3018 /* PBXTextBookmark */;
+			CE787F880FF530CA001EB716 = CE787F880FF530CA001EB716 /* PBXTextBookmark */;
+			CE787F890FF530CA001EB716 = CE787F890FF530CA001EB716 /* PBXTextBookmark */;
+			CE787F8A0FF530CA001EB716 = CE787F8A0FF530CA001EB716 /* PBXTextBookmark */;
+			CE787F8B0FF530CA001EB716 = CE787F8B0FF530CA001EB716 /* PBXTextBookmark */;
+			CE787FB20FF53192001EB716 = CE787FB20FF53192001EB716 /* PBXTextBookmark */;
+			CE787FB30FF53192001EB716 = CE787FB30FF53192001EB716 /* PBXTextBookmark */;
+			CE787FB40FF53192001EB716 = CE787FB40FF53192001EB716 /* PBXTextBookmark */;
+			CE787FD20FF5395B001EB716 = CE787FD20FF5395B001EB716 /* PBXTextBookmark */;
+			CE787FEE0FF5395B001EB716 = CE787FEE0FF5395B001EB716 /* PBXTextBookmark */;
+		};
+		sourceControlManager = CE787F610FF4ED95001EB716 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	8D1107260486CEB800E47090 /* rainbow-dvd */ = {
+		activeExec = 0;
+		executables = (
+			CE787F550FF4ED76001EB716 /* rainbow-dvd */,
+		);
+	};
+	CE01323C0FF583F7004F2A17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 18";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 698;
+		vrLoc = 0;
+	};
+	CE01323D0FF583F7004F2A17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 18";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 698;
+		vrLoc = 0;
+	};
+	CE01325A0FF58410004F2A17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 18";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 0;
+	};
+	CE01325B0FF58410004F2A17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 18";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 0;
+	};
+	CE01325C0FF58410004F2A17 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F6F0FF52FAD001EB716 /* EditInfoViewController.h */;
+		name = "EditInfoViewController.h: 18";
+		rLen = 0;
+		rLoc = 415;
+		rType = 0;
+		vrLen = 422;
+		vrLoc = 0;
+	};
+	CE29E7150FF572DF00762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F6F0FF52FAD001EB716 /* EditInfoViewController.h */;
+		name = "EditInfoViewController.h: 18";
+		rLen = 0;
+		rLoc = 415;
+		rType = 0;
+		vrLen = 422;
+		vrLoc = 0;
+	};
+	CE29E7160FF572DF00762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F700FF52FAD001EB716 /* EditInfoViewController.m */;
+		name = "EditInfoViewController.m: 9";
+		rLen = 0;
+		rLoc = 151;
+		rType = 0;
+		vrLen = 259;
+		vrLoc = 0;
+	};
+	CE29E7460FF57D9300762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F730FF53053001EB716 /* InfoViewController.m */;
+		name = "InfoViewController.m: 15";
+		rLen = 0;
+		rLoc = 183;
+		rType = 0;
+		vrLen = 233;
+		vrLoc = 0;
+	};
+	CE29E7780FF5800900762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA40FF5310C001EB716 /* DVDBrowserController.m */;
+		name = "DVDBrowserController.m: 34";
+		rLen = 0;
+		rLoc = 864;
+		rType = 0;
+		vrLen = 1141;
+		vrLoc = 312;
+	};
+	CE29E77D0FF580C200762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA90FF53128001EB716 /* DVDBrowserView.h */;
+		name = "DVDBrowserView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 245;
+		vrLoc = 0;
+	};
+	CE29E77E0FF580C200762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FAA0FF53128001EB716 /* DVDBrowserView.m */;
+		name = "DVDBrowserView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 0;
+	};
+	CE29E77F0FF580C200762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA40FF5310C001EB716 /* DVDBrowserController.m */;
+		name = "DVDBrowserController.m: 35";
+		rLen = 0;
+		rLoc = 867;
+		rType = 0;
+		vrLen = 1130;
+		vrLoc = 281;
+	};
+	CE29E7800FF580C200762235 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F740FF53053001EB716 /* InfoViewController.h */;
+		name = "InfoViewController.h: 16";
+		rLen = 0;
+		rLoc = 344;
+		rType = 0;
+		vrLen = 351;
+		vrLoc = 0;
+	};
+	CE59B3240FF58188006C3018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 18";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 626;
+		vrLoc = 0;
+	};
+	CE59B32E0FF583D8006C3018 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 18";
+		rLen = 0;
+		rLoc = 370;
+		rType = 0;
+		vrLen = 698;
+		vrLoc = 0;
+	};
+	CE787F550FF4ED76001EB716 /* rainbow-dvd */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "rainbow-dvd";
+		savedGlobals = {
+		};
+		sourceDirectories = (
+		);
+	};
+	CE787F610FF4ED95001EB716 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryName = "rainbow-dvd";
+		};
+	};
+	CE787F620FF4ED95001EB716 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	CE787F6F0FF52FAD001EB716 /* EditInfoViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 411}}";
+			sepNavSelRange = "{415, 0}";
+			sepNavVisRange = "{0, 422}";
+		};
+	};
+	CE787F700FF52FAD001EB716 /* EditInfoViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 601}}";
+			sepNavSelRange = "{151, 0}";
+			sepNavVisRange = "{0, 259}";
+		};
+	};
+	CE787F730FF53053001EB716 /* InfoViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 601}}";
+			sepNavSelRange = "{183, 0}";
+			sepNavVisRange = "{0, 233}";
+		};
+	};
+	CE787F740FF53053001EB716 /* InfoViewController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 601}}";
+			sepNavSelRange = "{344, 0}";
+			sepNavVisRange = "{0, 351}";
+		};
+	};
+	CE787F880FF530CA001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F6F0FF52FAD001EB716 /* EditInfoViewController.h */;
+		name = "EditInfoViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 346;
+		vrLoc = 0;
+	};
+	CE787F890FF530CA001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F700FF52FAD001EB716 /* EditInfoViewController.m */;
+		name = "EditInfoViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 81;
+		vrLoc = 0;
+	};
+	CE787F8A0FF530CA001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F730FF53053001EB716 /* InfoViewController.m */;
+		name = "InfoViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 73;
+		vrLoc = 0;
+	};
+	CE787F8B0FF530CA001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F740FF53053001EB716 /* InfoViewController.h */;
+		name = "InfoViewController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 284;
+		vrLoc = 0;
+	};
+	CE787F9D0FF530FF001EB716 /* DVDDataSource.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {740, 411}}";
+			sepNavSelRange = "{251, 30}";
+			sepNavVisRange = "{0, 652}";
+		};
+	};
+	CE787FA30FF5310C001EB716 /* DVDBrowserController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 518}}";
+			sepNavSelRange = "{370, 0}";
+			sepNavVisRange = "{0, 626}";
+		};
+	};
+	CE787FA40FF5310C001EB716 /* DVDBrowserController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 1358}}";
+			sepNavSelRange = "{867, 0}";
+			sepNavVisRange = "{281, 1130}";
+			sepNavWindowFrame = "{{15, 46}, {824, 727}}";
+		};
+	};
+	CE787FA90FF53128001EB716 /* DVDBrowserView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 601}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 245}";
+		};
+	};
+	CE787FAA0FF53128001EB716 /* DVDBrowserView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1012, 601}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 746}";
+		};
+	};
+	CE787FB20FF53192001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA90FF53128001EB716 /* DVDBrowserView.h */;
+		name = "DVDBrowserView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 245;
+		vrLoc = 0;
+	};
+	CE787FB30FF53192001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FAA0FF53128001EB716 /* DVDBrowserView.m */;
+		name = "DVDBrowserView.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 0;
+	};
+	CE787FB40FF53192001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787FA30FF5310C001EB716 /* DVDBrowserController.h */;
+		name = "DVDBrowserController.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 698;
+		vrLoc = 0;
+	};
+	CE787FD20FF5395B001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F9D0FF530FF001EB716 /* DVDDataSource.h */;
+		name = "DVDDataSource.h: 18";
+		rLen = 30;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 0;
+	};
+	CE787FEE0FF5395B001EB716 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = CE787F9D0FF530FF001EB716 /* DVDDataSource.h */;
+		name = "DVDDataSource.h: 18";
+		rLen = 30;
+		rLoc = 251;
+		rType = 0;
+		vrLen = 652;
+		vrLoc = 0;
+	};
+}
