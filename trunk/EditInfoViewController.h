@@ -17,4 +17,14 @@
 
 - (NSView *) view;
 
+@property (retain,getter=view) NSView *oView;
+@property (retain) NSTokenField *oActors;
+@property (retain) NSButton *oCancel;
+@property (retain) NSTextField *oDirector;
+@property (retain) NSPopUpButton *oGenre;
+@property (retain) NSImageView *oPoster;
+@property (retain) NSButton *oSave;
+@property (retain) NSTextView *oSynopsis;
+@property (retain) NSTextField *oTitle;
+@property (retain) NSPopUpButton *oYear;
 @end

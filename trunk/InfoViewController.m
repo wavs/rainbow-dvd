@@ -20,4 +20,12 @@
   [super dealloc];
 }
 
+@synthesize oView;
+@synthesize oActors;
+@synthesize oDirector;
+@synthesize oGenre;
+@synthesize oTitle;
+@synthesize oSynopsis;
+@synthesize oYear;
+@synthesize oEdit;
 @end

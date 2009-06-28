@@ -21,4 +21,14 @@
   [super dealloc];
 }
 
+@synthesize oView;
+@synthesize oActors;
+@synthesize oCancel;
+@synthesize oDirector;
+@synthesize oGenre;
+@synthesize oPoster;
+@synthesize oSave;
+@synthesize oSynopsis;
+@synthesize oTitle;
+@synthesize oYear;
 @end
