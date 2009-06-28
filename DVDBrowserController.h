@@ -15,13 +15,14 @@
 
 @interface DVDBrowserController : NSWindowController
 {
-  IBOutlet id oImageBrowser;
-  DVDDataSource	*dataSource;
-  BOOL editable;
-  IBOutlet NSView *infoView;
-  
-  InfoViewController *nonEditableInfoView;
-  EditInfoViewController *editableInfoView;
+	IBOutlet id oImageBrowser;
+	DVDDataSource	*dataSource;
+	BOOL editable;
+	IBOutlet NSView *infoView;
+	IBOutlet NSDrawer *drawer;
+	
+	InfoViewController *nonEditableInfoView;
+	EditInfoViewController *editableInfoView;
 }
 
 - (IBAction) addDVDButtonClicked:(id)sender;
@@ -32,5 +33,12 @@
 
 - (void) viewMode;
 - (void) editMode;
+
+@property (retain) id oImageBrowser;
+@property (retain) DVDDataSource	*dataSource;
+@property BOOL editable;
+@property (retain) NSView *infoView;
+@property (retain) InfoViewController *nonEditableInfoView;
+@property (retain) EditInfoViewController *editableInfoView;
 
 @end

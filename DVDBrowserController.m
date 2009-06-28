@@ -28,31 +28,34 @@
 
 - (void) awakeFromNib 
 {
-  dataSource = [[DVDDataSource alloc] init];
-  [oImageBrowser setDataSource:dataSource];
-
-  [nonEditableInfoView init];
-  
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshEditPanel:) name:kSelectedDVDDidChange object:nil];
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closePanel:) name:kNoDVDSelected object:nil];
-//  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshImageInBrowser:) name:kDVDImageDidChange object:nil];
+	dataSource = [[DVDDataSource alloc] init];
+	[oImageBrowser setDataSource:dataSource];
+	
+	[nonEditableInfoView init];
+	[drawer setDelegate:self];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshEditPanel:) name:kSelectedDVDDidChange object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closePanel:) name:kNoDVDSelected object:nil];
+	//  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshImageInBrowser:) name:kDVDImageDidChange object:nil];
 }
 
 
 
 - (void) updateDataSource
 {
-  [oImageBrowser reloadData];
+	[oImageBrowser reloadData];
 }
 
 - (void) viewMode
 {
-  editable = NO;
+	[drawer setContentView:nonEditableInfoView.view];
+	editable = NO;
 }
 
 - (void) editMode
 {
-  editable = YES;
+	[drawer setContentView:editableInfoView.view];
+	editable = YES;
 }
 
 // switch from view to edit
@@ -66,33 +69,39 @@
 
 - (IBAction) addDVDButtonClicked:(id)sender 
 {
-  NSMutableDictionary	*dvd = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-						@"", kDVDTitle, 
-						@"", kDVDDirector,
-						@"", kDVDGenre,
-						@"", kDVDYear,
-						[NSTokenField new], kDVDActors,
-						@"", kDVDSynopsis,
-						[[DVDItem alloc] init], kDVDImageBrowserItem,
-						nil];
-  [dataSource addNewDVD:dvd];
-  [self editMode];
-  [self updateDataSource];
-  [oImageBrowser setSelectionIndexes:[NSIndexSet indexSetWithIndex:[[dataSource dvds] count] - 1]
-				byExtendingSelection:NO];
-  [[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
+	NSMutableDictionary	*dvd = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+								@"", kDVDTitle, 
+								@"", kDVDDirector,
+								@"", kDVDGenre,
+								@"", kDVDYear,
+								[NSTokenField new], kDVDActors,
+								@"", kDVDSynopsis,
+								[[DVDItem alloc] init], kDVDImageBrowserItem,
+								nil];
+	[dataSource addNewDVD:dvd];
+	[self editMode];
+	[self updateDataSource];
+	[oImageBrowser setSelectionIndexes:[NSIndexSet indexSetWithIndex:[[dataSource dvds] count] - 1]
+				  byExtendingSelection:NO];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
 }
 
 - (int)selectedDVDIndex
 {
-  return [[oImageBrowser selectionIndexes] firstIndex];
+	return [[oImageBrowser selectionIndexes] firstIndex];
 }
 
 - (void) dealloc
 { 
-  [oImageBrowser release];
-  [dataSource release];
-  [super dealloc];
+	[oImageBrowser release];
+	[dataSource release];
+	[super dealloc];
 }
 
+@synthesize oImageBrowser;
+@synthesize dataSource;
+@synthesize editable;
+@synthesize infoView;
+@synthesize nonEditableInfoView;
+@synthesize editableInfoView;
 @end
