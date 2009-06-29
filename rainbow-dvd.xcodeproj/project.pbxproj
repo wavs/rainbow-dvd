@@ -145,8 +145,6 @@
 			children = (
 				CE787F9D0FF530FF001EB716 /* DVDDataSource.h */,
 				CE787F9E0FF530FF001EB716 /* DVDDataSource.m */,
-				CE787F9F0FF530FF001EB716 /* DVDItem.h */,
-				CE787FA00FF530FF001EB716 /* DVDItem.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -154,6 +152,8 @@
 		CE787F800FF530C0001EB716 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CE787F9F0FF530FF001EB716 /* DVDItem.h */,
+				CE787FA00FF530FF001EB716 /* DVDItem.m */,
 				CE787FA90FF53128001EB716 /* DVDBrowserView.h */,
 				CE787FAA0FF53128001EB716 /* DVDBrowserView.m */,
 			);
@@ -296,6 +296,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DEBUGGING_SYMBOLS = full;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

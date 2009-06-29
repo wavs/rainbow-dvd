@@ -65,10 +65,9 @@
   }
 }
 
-- (NSMutableDictionary *) addNewDVD:(NSMutableDictionary *)dvd
+- (void) addNewDVD:(NSMutableDictionary *)dvd
 {
   [dvds addObject:dvd];
-  return dvd;
 }
 
 - (void) dealloc 

@@ -31,19 +31,38 @@
 	dataSource = [[DVDDataSource alloc] init];
 	[oImageBrowser setDataSource:dataSource];
 	
-	[nonEditableInfoView init];
+	nonEditableInfoView = [[InfoViewController alloc] init];
+	editableInfoView = [[EditInfoViewController alloc] init];
 	[drawer setDelegate:self];
 	
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshEditPanel:) name:kSelectedDVDDidChange object:nil];
-	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closePanel:) name:kNoDVDSelected object:nil];
+	//[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshEditPanel:) name:kSelectedDVDDidChange object:nil];
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc addObserver:self selector:@selector(closePanel:) name:kNoDVDSelected object:nil];
 	//  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshImageInBrowser:) name:kDVDImageDidChange object:nil];
 }
 
-
+- (void) closePanel:(NSNotification *)notification
+{
+	NSLog(@"test");
+	[drawer close];
+}
 
 - (void) updateDataSource
 {
 	[oImageBrowser reloadData];
+}
+
+- (IBAction) saveChanges:(id)sender
+{
+	
+}
+
+- (IBAction) cancelChanges:(id)sender
+{
+}
+
+- (IBAction) edit:(id)sender
+{
 }
 
 - (void) viewMode
@@ -63,10 +82,6 @@
 {
 }
 
-- (void) refreshEditPanel
-{
-}
-
 - (IBAction) addDVDButtonClicked:(id)sender 
 {
 	NSMutableDictionary	*dvd = [NSMutableDictionary dictionaryWithObjectsAndKeys:
@@ -79,11 +94,12 @@
 								[[DVDItem alloc] init], kDVDImageBrowserItem,
 								nil];
 	[dataSource addNewDVD:dvd];
-	[self editMode];
 	[self updateDataSource];
+	NSLog(@"[dataSource dvds] count : %i", [[dataSource dvds] count]);
 	[oImageBrowser setSelectionIndexes:[NSIndexSet indexSetWithIndex:[[dataSource dvds] count] - 1]
 				  byExtendingSelection:NO];
-	[[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
+	//[[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
+	[drawer open];
 }
 
 - (int)selectedDVDIndex
@@ -92,8 +108,11 @@
 }
 
 - (void) dealloc
-{ 
-	[oImageBrowser release];
+{
+	NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+	[nc removeObserver:self];
+	[editableInfoView release];
+	[nonEditableInfoView release];
 	[dataSource release];
 	[super dealloc];
 }

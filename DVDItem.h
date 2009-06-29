@@ -25,7 +25,6 @@
 
 - (id) initWithImage:(NSImage *)path;
 - (id) initWithImage:(NSImage *)path andTitle:(NSString *)title andDirector:(NSString *)director;
-- (void) setImageRepresentation:(NSImage *)image;
-- (NSImage *) imageRepresentation;
+
 
 @end

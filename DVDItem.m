@@ -11,18 +11,11 @@
 
 @implementation DVDItem
 
-@synthesize imageUID, imageRepresentationType, imageTitle, imageSubtitle;
-
-- (void) setImageRepresentation:(NSImage *)image
-{
-  imageRepresentation = image;
-  [imageRepresentation retain];
-}
-
-- (NSImage *) imageRepresentation
-{
-  return imageRepresentation;
-}
+@synthesize imageUID;
+@synthesize imageRepresentation;
+@synthesize imageTitle;
+@synthesize imageSubtitle;
+@synthesize imageRepresentationType;
 
 - (id) init
 {
@@ -55,8 +48,6 @@
   imageSubtitle = director;
   return self;
 }
-
-@synthesize imageUID, imageRepresentationType, imageTitle, imageSubtitle, imageRepresentation;
 
 /*! 
  @method isSelectable

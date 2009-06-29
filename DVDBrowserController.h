@@ -26,10 +26,11 @@
 }
 
 - (IBAction) addDVDButtonClicked:(id)sender;
+- (IBAction) saveChanges:(id)sender;
+- (IBAction) cancelChanges:(id)sender;
+- (IBAction) edit:(id)sender;
 
 - (int) selectedDVDIndex;
-
-- (void) refreshEditPanel;
 
 - (void) viewMode;
 - (void) editMode;
