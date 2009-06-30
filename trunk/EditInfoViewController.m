@@ -7,8 +7,20 @@
   self = [super init];
   if (self != nil) {
 	[oView display];
+	  oTitle = [[NSTextField alloc] init];
+	  oDirector = [[NSTextField alloc] init];
+	  oYear = [[NSPopUpButton alloc] init];
+	  oGenre = [[NSPopUpButton alloc] init];
+	  oPoster = [[NSImageView alloc] init];
+	  oSynopsis = [[NSTextField	alloc] init];
+	  oActors = [[NSTokenField alloc] init];
   }
   return self;
+}
+
+- (void) awakeFromNib
+{
+	
 }
 
 - (NSView *) view

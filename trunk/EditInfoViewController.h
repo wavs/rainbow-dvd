@@ -10,7 +10,7 @@
   IBOutlet NSPopUpButton *oGenre;
   IBOutlet NSImageView *oPoster;
   IBOutlet NSButton *oSave;
-  IBOutlet NSTextView *oSynopsis;
+  IBOutlet NSTextField *oSynopsis;
   IBOutlet NSTextField *oTitle;
   IBOutlet NSPopUpButton *oYear;
 }
@@ -24,7 +24,7 @@
 @property (retain) NSPopUpButton *oGenre;
 @property (retain) NSImageView *oPoster;
 @property (retain) NSButton *oSave;
-@property (retain) NSTextView *oSynopsis;
+@property (retain) NSTextField *oSynopsis;
 @property (retain) NSTextField *oTitle;
 @property (retain) NSPopUpButton *oYear;
 @end
