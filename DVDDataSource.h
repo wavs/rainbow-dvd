@@ -15,7 +15,7 @@
   NSMutableArray *dvds;
 }
 
-@property (retain, nonatomic) NSMutableArray *dvds;
+@property (readonly) NSMutableArray *dvds;
 
 
 - (void) addNewDVD:(NSMutableDictionary *)dvd;

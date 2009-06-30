@@ -19,21 +19,26 @@
 
 - (id) init
 {
-  self = [super init];
-  if (self != nil) {
-	imageRepresentation = [NSImage imageNamed:NSImageNameIconViewTemplate];
-	imageRepresentationType = IKImageBrowserNSImageRepresentationType;
-	imageUID = [imageRepresentation name];
-  }
-  return self;
+	self = [super init];
+	if (self != nil)
+	{
+		imageTitle = [[NSString alloc] initWithString:@"Movie"];
+		imageSubtitle = [[NSString alloc] initWithString:@"Director"];
+		imageRepresentationType = IKImageBrowserNSImageRepresentationType;
+		imageRepresentation = [NSImage imageNamed:NSImageNameIconViewTemplate];
+		[imageRepresentation retain];
+		imageUID = [[NSString alloc] initWithString:[imageRepresentation description]];
+	}
+	return self;
 }
-
 
 - (id) initWithImage:(NSImage *)image
 {
-  self = [self init];
+  self = [super init];
   if (self != nil)
   {
+	imageTitle = [[NSString alloc] initWithString:@"Movie"];
+	imageSubtitle = [[NSString alloc] initWithString:@"Director"];
 	imageRepresentationType = IKImageBrowserNSImageRepresentationType;
 	imageRepresentation = image;
 	imageUID = [imageRepresentation description];
@@ -44,8 +49,8 @@
 - (id) initWithImage:(NSImage *)image andTitle:(NSString *)title andDirector:(NSString *)director
 {
   self = [self initWithImage:image];
-  imageTitle = title;
-  imageSubtitle = director;
+  imageTitle = [[NSString alloc] initWithString:title];
+  imageSubtitle = [[NSString alloc] initWithString:director];
   return self;
 }
 
@@ -57,6 +62,14 @@
 - (BOOL) isSelectable
 {
   return YES;
+}
+
+- (NSString *)description
+{
+	NSString *result;
+	result = [[NSString alloc] initWithFormat:@"imageUID : %s\n imageTitle : %s\n imageSubtitle : %s\n imageRepresentation : %@\n",
+			  imageUID, imageTitle, imageSubtitle, imageRepresentation];
+	return result;
 }
 
 - (void) dealloc

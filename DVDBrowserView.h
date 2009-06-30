@@ -11,7 +11,8 @@
 
 @interface DVDBrowserView : IKImageBrowserView
 {
-  
 }
+
+- (void) mouseDown:(NSEvent *)event;
 
 @end

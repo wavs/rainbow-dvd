@@ -9,37 +9,35 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@class InfoViewController, EditInfoViewController;
-
-@class DVDDataSource, DVDEditController, DVDBrowserView;
+@class InfoViewController, EditInfoViewController, DVDDataSource, DVDBrowserView;
 
 @interface DVDBrowserController : NSWindowController
 {
-	IBOutlet id oImageBrowser;
+	IBOutlet DVDBrowserView *oImageBrowser;
+	IBOutlet NSTabView *tabView;
 	DVDDataSource	*dataSource;
-	BOOL editable;
-	IBOutlet NSView *infoView;
 	IBOutlet NSDrawer *drawer;
-	
+	BOOL editMode;
+	DVDBrowserView *imageBrowserDelegate;
 	InfoViewController *nonEditableInfoView;
 	EditInfoViewController *editableInfoView;
+	NSMutableDictionary *currentDVD;
 }
 
 - (IBAction) addDVDButtonClicked:(id)sender;
-- (IBAction) saveChanges:(id)sender;
-- (IBAction) cancelChanges:(id)sender;
-- (IBAction) edit:(id)sender;
+- (IBAction) saveButtonClicked:(id)sender;
+- (IBAction) cancelButtonClicked:(id)sender;
+- (IBAction) editButtonClicked:(id)sender;
+
+- (void) closePanel:(NSNotification *)notification;
 
 - (int) selectedDVDIndex;
 
-- (void) viewMode;
-- (void) editMode;
-
 @property (retain) id oImageBrowser;
+@property BOOL editMode;
 @property (retain) DVDDataSource	*dataSource;
-@property BOOL editable;
-@property (retain) NSView *infoView;
 @property (retain) InfoViewController *nonEditableInfoView;
 @property (retain) EditInfoViewController *editableInfoView;
+@property (retain) NSMutableDictionary *currentDVD;
 
 @end

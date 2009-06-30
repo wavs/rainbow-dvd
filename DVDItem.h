@@ -23,8 +23,9 @@
 @property(copy) NSString *imageTitle;
 @property(copy) NSString *imageSubtitle;
 
-- (id) initWithImage:(NSImage *)path;
-- (id) initWithImage:(NSImage *)path andTitle:(NSString *)title andDirector:(NSString *)director;
+- (id) init;
+- (id) initWithImage:(NSImage *)image;
+- (id) initWithImage:(NSImage *)image andTitle:(NSString *)title andDirector:(NSString *)director;
 
 
 @end

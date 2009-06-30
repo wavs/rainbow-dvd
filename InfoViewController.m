@@ -5,9 +5,20 @@
 - (id) init
 {
   self = [super init];
-  if (self != nil) {
+	if (self != nil) {
+		oTitle = [[NSTextField alloc] init];
+		oDirector = [[NSTextField alloc] init];
+		oYear = [[NSPopUpButton alloc] init];
+		oGenre = [[NSPopUpButton alloc] init];
+		oSynopsis = [[NSTextField	alloc] init];
+		oActors = [[NSTokenField alloc] init];
   }
   return self;
+}
+
+- (void) awakeFromNib
+{
+	[[self view] display]; 
 }
 
 - (NSView *) view

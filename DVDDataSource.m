@@ -8,8 +8,9 @@
 
 #import "DVDDataSource.h"
 #import <Quartz/Quartz.h>
+#import "DVDItem.h"
 
-#define	  kDVDTitle @"title"
+#define	kDVDTitle @"title"
 #define kDVDDirector @"director"
 #define kDVDGenre @"genre"
 #define kDVDYear @"year"
@@ -48,7 +49,8 @@
  */
 - (id /*IKImageBrowserItem*/) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index
 {
-  return [[dvds objectAtIndex:index] objectForKey:kDVDImageBrowserItem];
+	NSLog(@"%@", [[dvds objectAtIndex:index] objectForKey:kDVDImageBrowserItem]);
+	return [[dvds objectAtIndex:index] objectForKey:kDVDImageBrowserItem];
 }
 
 //-- optional methods
@@ -60,19 +62,23 @@
 - (void) imageBrowser:(IKImageBrowserView *) aBrowser removeItemsAtIndexes:(NSIndexSet *) indexes
 {
   for (int i = [indexes firstIndex]; i < [indexes lastIndex]; i++)
-  {
 	[dvds removeObjectAtIndex:i];
-  }
 }
 
 - (void) addNewDVD:(NSMutableDictionary *)dvd
 {
+  [dvd retain];
   [dvds addObject:dvd];
 }
 
 - (void) dealloc 
 { 
-  [dvds release]; 
+  NSUInteger i, count = [dvds count];
+  for (i = 0; i < count; i++) {
+	  NSDictionary * obj = [dvds objectAtIndex:i];
+	  [[obj objectForKey:kDVDImageBrowserItem] release];
+	  [obj release];
+  } 
   [super dealloc]; 
 } 
 

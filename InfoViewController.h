@@ -8,7 +8,7 @@
   IBOutlet NSTextField *oDirector;
   IBOutlet NSTextField *oGenre;
   IBOutlet NSTextField *oTitle;
-  IBOutlet NSTextView *oSynopsis;
+  IBOutlet NSTextField *oSynopsis;
   IBOutlet NSTextField *oYear;
   IBOutlet NSButton *oEdit;
 }
@@ -20,7 +20,7 @@
 @property (retain) NSTextField *oDirector;
 @property (retain) NSTextField *oGenre;
 @property (retain) NSTextField *oTitle;
-@property (retain) NSTextView *oSynopsis;
+@property (retain) NSTextField *oSynopsis;
 @property (retain) NSTextField *oYear;
 @property (retain) NSButton *oEdit;
 @end

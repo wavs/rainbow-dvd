@@ -15,7 +15,6 @@
 
 - (void) awakeFromNib
 {
-  [self setCellsStyleMask:IKCellsStyleShadowed];
 }
 
 - (void) mouseDown:(NSEvent *)event
@@ -26,8 +25,6 @@
   else
 	[[NSNotificationCenter defaultCenter] postNotificationName:kNoDVDSelected object:nil];
 }
-
-
 
 - (void) dealloc
 {
