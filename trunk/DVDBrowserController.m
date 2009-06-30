@@ -10,8 +10,6 @@
 #import "DVDDataSource.h"
 #import "DVDItem.h"
 #import "DVDBrowserView.h"
-#import "EditInfoViewController.h"
-#import "InfoViewController.h"
 #import "AmazonController.h"
 
 #define kDVDTitle @"title"
@@ -24,6 +22,7 @@
 #define kSelectedDVDDidChange @"kSelectedDVDDidChange"
 #define kDVDImageDidChange @"kDVDImageDidChange"
 #define kNoDVDSelected @"kNoDVDSelected"
+#define kDVDAddDVD @"kDVDAddDVD"
 
 @implementation DVDBrowserController
 
@@ -33,17 +32,25 @@
 	[dataSource retain];
 	[oImageBrowser setDataSource:dataSource];
 	
-	nonEditableInfoView = [[InfoViewController alloc] init];
-	[nonEditableInfoView retain];
-	editableInfoView = [[EditInfoViewController alloc] init];
-	[editableInfoView retain];
 	
 	[[self window] makeFirstResponder:nil];
 	[drawer setDelegate:self];
 	
+	[oEditGenre removeAllItems];
+	[oEditGenre addItemsWithTitles:[NSArray arrayWithObjects:@"comedy", @"romance", @"drama", nil]];
+	NSMutableArray *years = [[NSMutableArray alloc] init];
+	int year = 2009;
+	while (year > 1900)
+	{
+		[years addObject:[NSString stringWithFormat:@"%d", year]];
+		year = year - 1;
+	}
+	[oEditYear removeAllItems];
+	[oEditYear addItemsWithTitles:years];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshEditPanel:) name:kSelectedDVDDidChange object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closePanel:) name:kNoDVDSelected object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshImageInBrowser:) name:kDVDImageDidChange object:nil];
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDVD:) name:kDVDAddDVD object:nil];
 }
 
 - (void) closePanel:(NSNotification *)notification
@@ -59,11 +66,29 @@
 
 - (void) refreshEditPanel:(NSNotification *)notification
 {
-	[drawer open];
+	currentDVD = [[dataSource dvds] objectAtIndex:[self selectedDVDIndex]];
 	if (editMode == NO)
-	{
-		;
+	{		
+		[currentDVD retain];
+		[oTitle setStringValue:[currentDVD objectForKey:kDVDTitle]];
+		[oDirector setStringValue:[currentDVD objectForKey:kDVDDirector]];
+		//[nonEditableInfoView.oActors setStringValue:[currentDVD objectForKey:kDVDActors]];
+		[oGenre setStringValue:[currentDVD objectForKey:kDVDGenre]];
+		[oSynopsis setStringValue:[currentDVD objectForKey:kDVDSynopsis]];
+		[oYear setStringValue:[currentDVD objectForKey:kDVDYear]];
+		
+		[oEditTitle setStringValue:[currentDVD objectForKey:kDVDTitle]];
+		[oEditDirector setStringValue:[currentDVD objectForKey:kDVDDirector]];
+		//[nonEditableInfoView.oActors setStringValue:[currentDVD objectForKey:kDVDActors]];
+		[oEditGenre setStringValue:[currentDVD objectForKey:kDVDGenre]];
+		[oEditSynopsis setStringValue:[currentDVD objectForKey:kDVDSynopsis]];
+		[oEditYear setStringValue:[currentDVD objectForKey:kDVDYear]];
+		
+		[currentDVD release];
 	}
+	[tabView selectFirstTabViewItem:nil];
+	editMode = NO;
+	[drawer open];
 }
 
 - (void) updateDataSource
@@ -73,32 +98,28 @@
 
 - (IBAction) saveButtonClicked:(id)sender
 {
-//	DVDItem *dvdItem = [[DVDItem alloc] initWithImage:[[editableInfoView oPoster] image]];
-	[currentDVD setObject:[editableInfoView.oTitle stringValue] forKey:kDVDTitle];
-	NSLog(@"[editableInfoView.oDirector stringValue] : %s", [editableInfoView.oDirector stringValue]);
-	[currentDVD setObject:[editableInfoView.oDirector stringValue] forKey:kDVDDirector];
-	[currentDVD setObject:[editableInfoView.oGenre stringValue] forKey:kDVDGenre];
-	[currentDVD setObject:[editableInfoView.oYear stringValue] forKey:kDVDYear];
-	[currentDVD setObject:editableInfoView.oActors forKey:kDVDActors];
-	[currentDVD setObject:[editableInfoView.oSynopsis stringValue] forKey:kDVDSynopsis];
+	DVDItem *dvdItem = [currentDVD objectForKey:kDVDImageBrowserItem];
+	[dvdItem retain];
+	[dvdItem setImageRepresentation:[oEditPoster image]];
+	[dvdItem setImageUID:[NSString stringWithFormat:@"%i", NSTimeIntervalSince1970]];
+	[dvdItem setImageTitle:[oEditTitle stringValue]];
+	[dvdItem setImageSubtitle:[oEditDirector stringValue]];
+	[dvdItem release];
+	[oEditDirector selectText:nil];
+	[currentDVD setObject:[oEditTitle stringValue] forKey:kDVDTitle];
+	[currentDVD setObject:[oEditDirector stringValue] forKey:kDVDDirector];
+	[currentDVD setObject:[[oEditGenre selectedItem] title] forKey:kDVDGenre];
+	[currentDVD setObject:[[oEditYear selectedItem] title] forKey:kDVDYear];
+	[currentDVD setObject:oEditActors forKey:kDVDActors];
+	[currentDVD setObject:[oEditSynopsis stringValue] forKey:kDVDSynopsis];
 //	[currentDVD setObject:dvdItem forKey:kDVDImageBrowserItem];
+	editMode = NO;
 	[oImageBrowser reloadData];
-	[currentDVD release];
-	[self cancelButtonClicked:nil];
+	[self refreshEditPanel:nil];
 }
 
 - (IBAction) cancelButtonClicked:(id)sender
 {
-	currentDVD = [[dataSource dvds] objectAtIndex:[self selectedDVDIndex]];
-	[currentDVD retain];
-	[nonEditableInfoView.oTitle setStringValue:[currentDVD objectForKey:kDVDTitle]];
-	NSLog(@"%s", [currentDVD objectForKey:kDVDTitle]); //[nonEditableInfoView.oTitle stringValue]);
-	[nonEditableInfoView.oDirector setStringValue:[currentDVD objectForKey:kDVDDirector]];
-	//[nonEditableInfoView.oActors setStringValue:[currentDVD objectForKey:kDVDActors]];
-	[nonEditableInfoView.oGenre setStringValue:[currentDVD objectForKey:kDVDGenre]];
-	[nonEditableInfoView.oSynopsis setStringValue:[currentDVD objectForKey:kDVDSynopsis]];
-	[nonEditableInfoView.oYear setStringValue:[currentDVD objectForKey:kDVDYear]];
-	[currentDVD release];
 	[tabView selectFirstTabViewItem:nil];
 	editMode = NO;
 }
@@ -107,31 +128,43 @@
 {
 	[tabView selectLastTabViewItem:nil];
 	editMode = YES;
-	currentDVD = [[dataSource dvds] objectAtIndex:[self selectedDVDIndex]];
-	[currentDVD retain];
 }
 
-- (IBAction) addDVDButtonClicked:(id)sender
+- (void) addDVD:(NSNotification *)notification
 {
 	DVDItem *dvdItem = [[DVDItem alloc] init];
-	NSMutableDictionary	*dvd = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-								[NSMutableString stringWithString:@""], kDVDTitle, 
-								@"", kDVDDirector,
-								@"", kDVDGenre,
-								@"", kDVDYear,
-								[NSTokenField new], kDVDActors,
-								@"", kDVDSynopsis,
-								dvdItem, kDVDImageBrowserItem,
-								nil];
+	NSMutableDictionary	*dvd = [[NSMutableDictionary alloc] init];
+	if (amazonControllerInstance.currentCreatedDvd == nil)
+	{
+		dvd = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+									[NSMutableString stringWithString:@""], kDVDTitle, 
+									@"", kDVDDirector,
+									@"", kDVDGenre,
+									@"", kDVDYear,
+									[NSTokenField new], kDVDActors,
+									@"", kDVDSynopsis,
+									dvdItem, kDVDImageBrowserItem,
+									nil];
+	}
+	else
+	{
+		dvd = [NSMutableDictionary dictionaryWithDictionary:amazonControllerInstance.currentCreatedDvd];
+		[dvd setObject:dvdItem forKey:kDVDImageBrowserItem];
+		[dvd setObject:@"" forKey:kDVDGenre];
+		[dvd setObject:@"" forKey:kDVDSynopsis];
+	}
 	[dataSource addNewDVD:dvd];
 	[self updateDataSource];
 	NSLog(@"[dataSource dvds] count : %i", [[dataSource dvds] count]);
 	[oImageBrowser setSelectionIndexes:[NSIndexSet indexSetWithIndex:[[dataSource dvds] count] - 1]
 				  byExtendingSelection:NO];
-	//[[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
-	[drawer open];
-	
-	[amazonControllerInstance showAmazonSheet:nil];
+	currentDVD = [[dataSource dvds] objectAtIndex:[self selectedDVDIndex]];
+	dvdItem = [currentDVD objectForKey:kDVDImageBrowserItem];
+	[dvdItem retain];
+	[dvdItem setImageTitle:[dvd objectForKey:kDVDTitle]];
+	[dvdItem setImageSubtitle:[dvd objectForKey:kDVDDirector]];
+	[dvdItem release];	
+	[[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
 }
 
 - (int)selectedDVDIndex
@@ -139,11 +172,15 @@
 	return [[oImageBrowser selectionIndexes] firstIndex];
 }
 
+- (IBAction) zoomSliderDidChange:(id)sender
+{
+    [oImageBrowser setZoomValue:[sender floatValue]];
+    [oImageBrowser setNeedsDisplay:YES];
+}
+
 - (void) dealloc
 {
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
-	[editableInfoView release];
-	[nonEditableInfoView release];
 	[amazonControllerInstance release];
 	[dataSource release];
 	[super dealloc];
@@ -151,8 +188,6 @@
 
 @synthesize oImageBrowser;
 @synthesize dataSource;
-@synthesize nonEditableInfoView;
-@synthesize editableInfoView;
 @synthesize editMode;
 @synthesize currentDVD;
 @end

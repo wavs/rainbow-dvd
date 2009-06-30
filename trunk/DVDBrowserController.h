@@ -18,28 +18,42 @@
 	DVDDataSource	*dataSource;
 	IBOutlet NSDrawer *drawer;
 	BOOL editMode;
-	DVDBrowserView *imageBrowserDelegate;
-	InfoViewController *nonEditableInfoView;
-	EditInfoViewController *editableInfoView;
 	NSMutableDictionary *currentDVD;
 	
+	IBOutlet NSTokenField *oEditActors;
+	IBOutlet NSButton *oEditCancel;
+	IBOutlet NSTextField *oEditDirector;
+	IBOutlet NSPopUpButton *oEditGenre;
+	IBOutlet NSImageView *oEditPoster;
+	IBOutlet NSButton *oEditSave;
+	IBOutlet NSTextField *oEditSynopsis;
+	IBOutlet NSTextField *oEditTitle;
+	IBOutlet NSPopUpButton *oEditYear;
+
+	IBOutlet NSTokenField *oActors;
+	IBOutlet NSTextField *oDirector;
+	IBOutlet NSTextField *oGenre;
+	IBOutlet NSTextField *oTitle;
+	IBOutlet NSTextField *oSynopsis;
+	IBOutlet NSTextField *oYear;
+	IBOutlet NSButton *oEdit;
+
 	IBOutlet AmazonController *amazonControllerInstance;
 }
 
-- (IBAction) addDVDButtonClicked:(id)sender;
 - (IBAction) saveButtonClicked:(id)sender;
 - (IBAction) cancelButtonClicked:(id)sender;
 - (IBAction) editButtonClicked:(id)sender;
+- (IBAction) zoomSliderDidChange:(id)sender;
 
 - (void) closePanel:(NSNotification *)notification;
+- (void) addDVD:(NSNotification *)notification;
 
 - (int) selectedDVDIndex;
 
 @property (retain) id oImageBrowser;
 @property BOOL editMode;
 @property (retain) DVDDataSource	*dataSource;
-@property (retain) InfoViewController *nonEditableInfoView;
-@property (retain) EditInfoViewController *editableInfoView;
 @property (retain) NSMutableDictionary *currentDVD;
 
 @end

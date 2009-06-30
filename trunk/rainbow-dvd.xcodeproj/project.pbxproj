@@ -13,8 +13,6 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
-		CE787F710FF52FAD001EB716 /* EditInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787F700FF52FAD001EB716 /* EditInfoViewController.m */; };
-		CE787F750FF53053001EB716 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787F730FF53053001EB716 /* InfoViewController.m */; };
 		CE787FA10FF530FF001EB716 /* DVDDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787F9E0FF530FF001EB716 /* DVDDataSource.m */; };
 		CE787FA20FF530FF001EB716 /* DVDItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FA00FF530FF001EB716 /* DVDItem.m */; };
 		CE787FA50FF5310C001EB716 /* DVDBrowserController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE787FA40FF5310C001EB716 /* DVDBrowserController.m */; };
@@ -38,10 +36,6 @@
 		4B8C43370FFA9511005C4D30 /* SearchDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDataSource.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* rainbow-dvd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rainbow-dvd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE787F6F0FF52FAD001EB716 /* EditInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInfoViewController.h; sourceTree = "<group>"; };
-		CE787F700FF52FAD001EB716 /* EditInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInfoViewController.m; sourceTree = "<group>"; };
-		CE787F730FF53053001EB716 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
-		CE787F740FF53053001EB716 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		CE787F9D0FF530FF001EB716 /* DVDDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDDataSource.h; sourceTree = "<group>"; };
 		CE787F9E0FF530FF001EB716 /* DVDDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DVDDataSource.m; sourceTree = "<group>"; };
 		CE787F9F0FF530FF001EB716 /* DVDItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDItem.h; sourceTree = "<group>"; };
@@ -112,10 +106,6 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
-				4B8C42A40FFA8445005C4D30 /* AmazonController.m */,
-				4B8C42A50FFA8445005C4D30 /* AmazonController.h */,
-				4B8C43360FFA9511005C4D30 /* SearchDataSource.h */,
-				4B8C43370FFA9511005C4D30 /* SearchDataSource.m */,
 			);
 			name = "rainbow-dvd";
 			sourceTree = "<group>";
@@ -153,6 +143,8 @@
 		CE787F7F0FF530BB001EB716 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4B8C43360FFA9511005C4D30 /* SearchDataSource.h */,
+				4B8C43370FFA9511005C4D30 /* SearchDataSource.m */,
 				CE787F9D0FF530FF001EB716 /* DVDDataSource.h */,
 				CE787F9E0FF530FF001EB716 /* DVDDataSource.m */,
 			);
@@ -175,10 +167,8 @@
 			children = (
 				CE787FA30FF5310C001EB716 /* DVDBrowserController.h */,
 				CE787FA40FF5310C001EB716 /* DVDBrowserController.m */,
-				CE787F6F0FF52FAD001EB716 /* EditInfoViewController.h */,
-				CE787F700FF52FAD001EB716 /* EditInfoViewController.m */,
-				CE787F740FF53053001EB716 /* InfoViewController.h */,
-				CE787F730FF53053001EB716 /* InfoViewController.m */,
+				4B8C42A50FFA8445005C4D30 /* AmazonController.h */,
+				4B8C42A40FFA8445005C4D30 /* AmazonController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -239,8 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				CE787F710FF52FAD001EB716 /* EditInfoViewController.m in Sources */,
-				CE787F750FF53053001EB716 /* InfoViewController.m in Sources */,
 				CE787FA10FF530FF001EB716 /* DVDDataSource.m in Sources */,
 				CE787FA20FF530FF001EB716 /* DVDItem.m in Sources */,
 				CE787FA50FF5310C001EB716 /* DVDBrowserController.m in Sources */,

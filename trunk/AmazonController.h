@@ -28,8 +28,10 @@
 
 - (IBAction)showAmazonSheet:(id)sender;
 - (IBAction)endAmazonSheet:(id)sender;
-- (IBAction)AddDvdAndEndAmazonSheet:(id)sender;
+- (IBAction)addDvdAndEndAmazonSheet:(id)sender;
 - (IBAction)didEnd:(NSWindow *)sheet returnCode:(int)returnCode data:(NSString *)data;
 - (IBAction)fetchDvds:(id)sender;
+
+@property (retain) NSMutableDictionary *currentCreatedDvd;
 
 @end
