@@ -25,7 +25,9 @@
 		imageTitle = [[NSString alloc] initWithString:@"Movie"];
 		imageSubtitle = [[NSString alloc] initWithString:@"Director"];
 		imageRepresentationType = IKImageBrowserNSImageRepresentationType;
-		imageRepresentation = [NSImage imageNamed:NSImageNameIconViewTemplate];
+		// dvd.png n'existe pas, c'est normal! 
+		// Hack pour que l'imageBrowser se reload tout seul comme un grand
+		imageRepresentation = [[NSImage alloc] initByReferencingFile:@"dvd.png"];
 		[imageRepresentation retain];
 		imageUID = [[NSString alloc] initWithString:[imageRepresentation description]];
 	}

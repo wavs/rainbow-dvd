@@ -1,5 +1,8 @@
 #import "AmazonController.h"
 
+#define kDVDAddDVD @"kDVDAddDVD"
+
+
 @implementation AmazonController
 
 - (IBAction)showAmazonSheet:(id)sender {
@@ -28,7 +31,7 @@
 	[amazonSheet orderOut:sender];
 }
 
-- (IBAction)AddDvdAndEndAmazonSheet:(id)sender {
+- (IBAction)addDvdAndEndAmazonSheet:(id)sender {
 	
 	NSArray *keys = [NSArray arrayWithObjects:kDVDTitle, kDVDDirector, kDVDYear, kDVDActors, nil];
 	NSArray *objects = [NSArray arrayWithObjects:currentTitle, currentDirector, currentYear, currentActors, nil];
@@ -41,6 +44,7 @@
 	}
 	
 	[amazonSheet orderOut:sender];
+	[[NSNotificationCenter defaultCenter] postNotificationName:kDVDAddDVD object:nil];
 }
 
 - (IBAction)didEnd:(NSWindow *)sheet returnCode:(int)returnCode data:(NSString *)data {
@@ -145,7 +149,7 @@
 	}
 	else {
 		[addButton setTitle:@"Add a Dvd"];
-		[addButton setAction:@selector(AddDvdAndEndAmazonSheet:)];
+		[addButton setAction:@selector(addDvdAndEndAmazonSheet:)];
 		[addButton setEnabled:YES];
 	}
 }
@@ -225,5 +229,6 @@
 		[currentYear setString:[self stringForPath:@"ItemAttributes/ReleaseDate" ofNode:node]];
 }
 
+@synthesize currentCreatedDvd;
 
 @end
