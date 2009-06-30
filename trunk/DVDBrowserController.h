@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
 
-@class InfoViewController, EditInfoViewController, DVDDataSource, DVDBrowserView;
+@class InfoViewController, EditInfoViewController, DVDDataSource, DVDBrowserView, AmazonController;
 
 @interface DVDBrowserController : NSWindowController
 {
@@ -22,6 +22,8 @@
 	InfoViewController *nonEditableInfoView;
 	EditInfoViewController *editableInfoView;
 	NSMutableDictionary *currentDVD;
+	
+	IBOutlet AmazonController *amazonControllerInstance;
 }
 
 - (IBAction) addDVDButtonClicked:(id)sender;

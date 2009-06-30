@@ -12,6 +12,7 @@
 #import "DVDBrowserView.h"
 #import "EditInfoViewController.h"
 #import "InfoViewController.h"
+#import "AmazonController.h"
 
 #define kDVDTitle @"title"
 #define kDVDDirector @"director"
@@ -36,6 +37,7 @@
 	[nonEditableInfoView retain];
 	editableInfoView = [[EditInfoViewController alloc] init];
 	[editableInfoView retain];
+	
 	[[self window] makeFirstResponder:nil];
 	[drawer setDelegate:self];
 	
@@ -128,6 +130,8 @@
 				  byExtendingSelection:NO];
 	//[[NSNotificationCenter defaultCenter] postNotificationName:kSelectedDVDDidChange object:nil];
 	[drawer open];
+	
+	[amazonControllerInstance showAmazonSheet:nil];
 }
 
 - (int)selectedDVDIndex
@@ -140,6 +144,7 @@
 	[[NSNotificationCenter defaultCenter] removeObserver:self];
 	[editableInfoView release];
 	[nonEditableInfoView release];
+	[amazonControllerInstance release];
 	[dataSource release];
 	[super dealloc];
 }
