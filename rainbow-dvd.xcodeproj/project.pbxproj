@@ -10,6 +10,8 @@
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		4B8C42A60FFA8445005C4D30 /* AmazonController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8C42A40FFA8445005C4D30 /* AmazonController.m */; };
 		4B8C43380FFA9511005C4D30 /* SearchDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4B8C43370FFA9511005C4D30 /* SearchDataSource.m */; };
+		5604D3450FFD25C000E4EF93 /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5604D3440FFD25C000E4EF93 /* ServerController.m */; };
+		5604D3480FFD25CA00E4EF93 /* ClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5604D3470FFD25CA00E4EF93 /* ClientController.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
@@ -34,6 +36,10 @@
 		4B8C42A50FFA8445005C4D30 /* AmazonController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmazonController.h; sourceTree = "<group>"; };
 		4B8C43360FFA9511005C4D30 /* SearchDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDataSource.h; sourceTree = "<group>"; };
 		4B8C43370FFA9511005C4D30 /* SearchDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDataSource.m; sourceTree = "<group>"; };
+		5604D3430FFD25C000E4EF93 /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
+		5604D3440FFD25C000E4EF93 /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
+		5604D3460FFD25CA00E4EF93 /* ClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientController.h; sourceTree = "<group>"; };
+		5604D3470FFD25CA00E4EF93 /* ClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientController.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* rainbow-dvd.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "rainbow-dvd.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE787F9D0FF530FF001EB716 /* DVDDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DVDDataSource.h; sourceTree = "<group>"; };
@@ -165,6 +171,10 @@
 		CE787F810FF530C6001EB716 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				5604D3460FFD25CA00E4EF93 /* ClientController.h */,
+				5604D3470FFD25CA00E4EF93 /* ClientController.m */,
+				5604D3430FFD25C000E4EF93 /* ServerController.h */,
+				5604D3440FFD25C000E4EF93 /* ServerController.m */,
 				CE787FA30FF5310C001EB716 /* DVDBrowserController.h */,
 				CE787FA40FF5310C001EB716 /* DVDBrowserController.m */,
 				4B8C42A50FFA8445005C4D30 /* AmazonController.h */,
@@ -235,6 +245,8 @@
 				CE787FAB0FF53128001EB716 /* DVDBrowserView.m in Sources */,
 				4B8C42A60FFA8445005C4D30 /* AmazonController.m in Sources */,
 				4B8C43380FFA9511005C4D30 /* SearchDataSource.m in Sources */,
+				5604D3450FFD25C000E4EF93 /* ServerController.m in Sources */,
+				5604D3480FFD25CA00E4EF93 /* ClientController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

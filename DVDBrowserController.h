@@ -8,6 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Quartz/Quartz.h>
+#import "ClientController.h"
+#import "ServerController.h"
 
 @class InfoViewController, EditInfoViewController, DVDDataSource, DVDBrowserView, AmazonController;
 
@@ -38,6 +40,14 @@
 	IBOutlet NSTextField *oYear;
 	IBOutlet NSButton *oEdit;
 
+	// Network Outlets
+	IBOutlet NSDrawer *oNetworkDrawer;
+	IBOutlet NSTableView *servicesList;
+	
+	// Network Controllers
+	ServerController *serverController;
+	ClientController *clientController;
+	
 	IBOutlet AmazonController *amazonControllerInstance;
 }
 
@@ -45,7 +55,9 @@
 - (IBAction) cancelButtonClicked:(id)sender;
 - (IBAction) editButtonClicked:(id)sender;
 - (IBAction) zoomSliderDidChange:(id)sender;
+- (IBAction) removeDVD:(id)sender;
 
+- (IBAction) bonjourToggle:(id)sender;
 - (void) closePanel:(NSNotification *)notification;
 - (void) addDVD:(NSNotification *)notification;
 

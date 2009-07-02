@@ -85,4 +85,24 @@
 }
 
 
+- (void) encodeWithCoder:(NSCoder*) coder
+{
+	[super encodeWithCoder:coder];
+	[coder encodeObject:imageRepresentation forKey:@"imageRepresentation"];
+	[coder encodeObject:imageRepresentationType forKey:@"imageRepresentationType"];
+	[coder encodeObject:imageUID forKey:@"imageUID"];
+	[coder encodeObject:imageTitle forKey:@"imageTitle"];
+	[coder encodeObject:imageSubtitle forKey:@"imageSubtitle"];
+}
+
+- (id) initWithCoder:(NSCoder*) coder
+{
+	self = [super init];
+	imageRepresentation = [[coder decodeObjectForKey:@"imageRepresentation"] retain];
+	imageRepresentationType = [[coder decodeObjectForKey:@"imageRepresentationType"] retain];
+	imageUID = [[coder decodeObjectForKey:@"imageUID"] retain];
+	imageTitle = [[coder decodeObjectForKey:@"imageTitle"] retain];
+	imageSubtitle = [[coder decodeObjectForKey:@"imageSubtitle"] retain];
+	return self;
+}
 @end

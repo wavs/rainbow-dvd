@@ -11,6 +11,8 @@
 #import "DVDItem.h"
 #import "DVDBrowserView.h"
 #import "AmazonController.h"
+#import "ClientController.h"
+#import "ServerController.h"
 
 #define kDVDTitle @"title"
 #define kDVDDirector @"director"
@@ -23,13 +25,17 @@
 #define kDVDImageDidChange @"kDVDImageDidChange"
 #define kNoDVDSelected @"kNoDVDSelected"
 #define kDVDAddDVD @"kDVDAddDVD"
-
+#define kMyComputer @"My Computer"
 @implementation DVDBrowserController
 
 - (void) awakeFromNib 
 {
+	// if Database not found
 	dataSource = [[DVDDataSource alloc] init];
 	[dataSource retain];
+	// else
+	// load it
+	
 	[oImageBrowser setDataSource:dataSource];
 	
 	
@@ -51,6 +57,10 @@
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(closePanel:) name:kNoDVDSelected object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshImageInBrowser:) name:kDVDImageDidChange object:nil];
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addDVD:) name:kDVDAddDVD object:nil];
+	
+	// Network init
+	serverController = [[ServerController alloc] initWithData:[dataSource dvds]];
+	clientController = [[ClientController alloc] initWithDataSource:dataSource withServicesList:servicesList withMainView:oImageBrowser];
 }
 
 - (void) closePanel:(NSNotification *)notification
@@ -186,6 +196,41 @@
 	[super dealloc];
 }
 
+- (IBAction) removeDVD:(id)sender
+{
+	[[dataSource dvds] removeObjectAtIndex:[self selectedDVDIndex]];
+	[oImageBrowser reloadData];
+}
+////////////////////
+// NEtwork
+- (IBAction) bonjourToggle:(id)sender
+{
+	[oNetworkDrawer toggle:sender];
+}
+
+- (void)tableViewSelectionDidChange:(NSNotification *)aNotification
+{
+	
+}
+
+- (id)tableView:(NSTableView *)aTableView
+objectValueForTableColumn:(NSTableColumn *)aTableColumn
+			row:(int)rowIndex
+{
+	if (rowIndex == 0)
+	{
+		return kMyComputer;
+	}
+	else
+	{
+		return [clientController serviceNameForIndex:rowIndex];
+	}
+}
+
+- (int)numberOfRowsInTableView:(NSTableView *)aTableView
+{
+	return [clientController servicesCount];
+}
 @synthesize oImageBrowser;
 @synthesize dataSource;
 @synthesize editMode;

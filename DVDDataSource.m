@@ -82,4 +82,10 @@
   [super dealloc]; 
 } 
 
+- (void) setDvds:(NSMutableArray*) newDvds
+{
+	[newDvds retain];
+	[dvds release];
+	dvds = newDvds;
+}
 @end
