@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface DVDItem : NSObject
+@interface DVDItem : NSObject <NSCoding> 
 {
   NSImage *imageRepresentation;
   NSString *imageRepresentationType;
@@ -27,5 +27,6 @@
 - (id) initWithImage:(NSImage *)image;
 - (id) initWithImage:(NSImage *)image andTitle:(NSString *)title andDirector:(NSString *)director;
 
-
+- (void) encodeWithCoder:(NSCoder*) coder;
+- (id) initWithCoder:(NSCoder*) coder;
 @end

@@ -22,5 +22,5 @@
 - (void) imageBrowser:(IKImageBrowserView *)aBrowser removeItemsAtIndexes:(NSIndexSet *)indexes;
 - (NSUInteger) numberOfItemsInImageBrowser:(IKImageBrowserView *)aBrowser;
 - (id /*IKImageBrowserItem*/) imageBrowser:(IKImageBrowserView *)aBrowser itemAtIndex:(NSUInteger)index;
-
+- (void) setDvds:(NSMutableArray*) newDvds;
 @end
