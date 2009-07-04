@@ -85,24 +85,24 @@
 }
 
 
-- (void) encodeWithCoder:(NSCoder*) coder
+- (void) encodeWithCoder:(NSCoder*) encoder
 {
-	[super encodeWithCoder:coder];
-	[coder encodeObject:imageRepresentation forKey:@"imageRepresentation"];
-	[coder encodeObject:imageRepresentationType forKey:@"imageRepresentationType"];
-	[coder encodeObject:imageUID forKey:@"imageUID"];
-	[coder encodeObject:imageTitle forKey:@"imageTitle"];
-	[coder encodeObject:imageSubtitle forKey:@"imageSubtitle"];
+	//[super encodeWithCoder:encoder];
+	[encoder encodeObject:imageRepresentation forKey:@"imageRepresentation"];
+	[encoder encodeObject:imageRepresentationType forKey:@"imageRepresentationType"];
+	[encoder encodeObject:imageUID forKey:@"imageUID"];
+	[encoder encodeObject:imageTitle forKey:@"imageTitle"];
+	[encoder encodeObject:imageSubtitle forKey:@"imageSubtitle"];
 }
 
-- (id) initWithCoder:(NSCoder*) coder
+- (id) initWithCoder:(NSCoder*) decoder
 {
 	self = [super init];
-	imageRepresentation = [[coder decodeObjectForKey:@"imageRepresentation"] retain];
-	imageRepresentationType = [[coder decodeObjectForKey:@"imageRepresentationType"] retain];
-	imageUID = [[coder decodeObjectForKey:@"imageUID"] retain];
-	imageTitle = [[coder decodeObjectForKey:@"imageTitle"] retain];
-	imageSubtitle = [[coder decodeObjectForKey:@"imageSubtitle"] retain];
+	imageRepresentation = [[decoder decodeObjectForKey:@"imageRepresentation"] retain];
+	imageRepresentationType = [[decoder decodeObjectForKey:@"imageRepresentationType"] retain];
+	imageUID = [[decoder decodeObjectForKey:@"imageUID"] retain];
+	imageTitle = [[decoder decodeObjectForKey:@"imageTitle"] retain];
+	imageSubtitle = [[decoder decodeObjectForKey:@"imageSubtitle"] retain];
 	return self;
 }
 @end
