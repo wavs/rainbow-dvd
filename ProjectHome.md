@@ -1,0 +1,1 @@
+This is a student project of Epita, the leading Computer Science university in France.
